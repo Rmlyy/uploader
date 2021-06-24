@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "Rmly",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
