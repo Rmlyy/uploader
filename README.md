@@ -21,7 +21,7 @@ Simple to use Uploader with Discord Embed, ShareX & Flameshot support.
 * (Optional) a web server
 
 ## Installation:
-**NOTE:** The installation guide was written assuming the host OS is Ubuntu 20.04.
+**NOTE:** The installation guide was written assuming the host OS is Debian 10.
 
 1. Clone the repository
 `$ git clone https://github.com/Rmlyy/Uploader.git`
