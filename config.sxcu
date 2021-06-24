@@ -1,0 +1,14 @@
+﻿{
+  "Version": "13.5.0",
+  "Name": "Uploader v1.0",
+  "DestinationType": "ImageUploader, TextUploader, FileUploader",
+  "RequestMethod": "POST",
+  "RequestURL": "http://localhost:8720",
+  "Parameters": {
+    "secret": "verysecretkey"
+  },
+  "Body": "MultipartFormData",
+  "FileFormName": "file",
+  "URL": "$json:url$",
+  "DeletionURL": "$json:deletionUrl$"
+}

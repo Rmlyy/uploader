@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="<%- color %>">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/icon.png">
+    <script src="https://kit.fontawesome.com/e931be9ca1.js" crossorigin="anonymous"></script>
+    <title><%- appName %> | <%- name %></title>
+<% if (image) { %>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%- cardTitle %>">
+    <meta name="twitter:image" content="<%- rawurl %>">
+    <meta name="twitter:description" content="<%- cardDescription %>">
+<% } else if (text) { %>
+    <meta property="og:title" content="<%- cardTitle %>">
+    <meta property="og:description" content="<%- cardDescription %>">
+    <meta property="og:url" content="<%- url %>">
+<% } else { %>
+    <meta property="og:title" content="<%- cardTitle %>">
+    <meta property="og:description" content="<%- cardDescription %>">
+    <meta property="og:url" content="<%- url %>">
+<%} %>
+</head>
+<body>

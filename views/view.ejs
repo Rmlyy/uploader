@@ -1,0 +1,24 @@
+<%- include('partials/head') %> 
+
+<% if (image) { %>
+    <h1><%- header %></h1><br>
+    <img src="<%- rawurl %>" alt="Uploaded image">
+<% } else if (text) { %>
+    <h1><%- header %></h1><br>
+    <code><%- content %></code>
+<% } else if (video) { %>
+    <h1><%- header %></h1>
+    <video width="320" height="240" controls>
+        <source src="<%- rawurl %>" type="video/mp4">
+      </video>
+<% } else { %>
+    <h1>Uncategorized file</h1>
+    <h2><%- header %></h2><br>
+    <img src="/img/question_mark.png" alt="Question Mark" height="200" width="200">
+<% } %>
+
+<p>Uploaded at <b><%- uploadedAt %> </b></p>
+<a href="<%- rawurl %> " target="_blank"><button class="btn"><i class="far fa-image"></i> View raw</button></a>
+<a href="<%- dlurl %> " target="_blank"><button class="btn"><i class="fas fa-cloud-download-alt"></i> Download</button></a>
+
+<%- include('partials/footer') %> 
