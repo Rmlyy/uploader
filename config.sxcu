@@ -3,7 +3,7 @@
   "Name": "Uploader v1.0",
   "DestinationType": "ImageUploader, TextUploader, FileUploader",
   "RequestMethod": "POST",
-  "RequestURL": "http://localhost:8720",
+  "RequestURL": "https://yourdomain.com",
   "Parameters": {
     "secret": "verysecretkey"
   },
