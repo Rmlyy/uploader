@@ -9,9 +9,9 @@ const placeholder = require('string-placeholder')
 router.get('/:file', (req, res) => {
     const { file } = req.params
     const extension = require('../utils/checkExtension')
-    const getSize = require('../utils/getSize')
     const total = require('../utils/totalUploads')
     const color = require('../utils/color')
+    const getSize = require('../utils/getSize')
 
     if (extension(file) === 'image') {
         const imagePath = `${path.dirname(require.main.filename)}/uploads/images/${file}`

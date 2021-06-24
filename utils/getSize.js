@@ -1,7 +1,6 @@
 const fs = require('fs')
-const filesize = require("filesize");
+const bytesToSize = require('../utils/bytesToSize')
 
 module.exports = function (path) {
-    const stats = fs.statSync(path)
-    return filesize(stats.size, { round: 0 });
+    return bytesToSize(fs.statSync(path).size)
 }
