@@ -122,7 +122,7 @@ Make sure you have the `proxy_http` module enabled: `a2enmod proxy_http`
 </VirtualHost>
 ```
 7. Configure ShareX   
-7.1 [Download ShareX example config](https://rmly.dev/uploader/config.sxcu)  
+7.1 Download the example config file from the repository
 7.2 Import the config  
 7.3 Change "Request URL" to your domain  
 7.4 Change secret key value to your secret key  
