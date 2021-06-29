@@ -16,7 +16,6 @@ router.post('/', (req, res) => {
     }
 
     const generateString = require('../utils/generateString')
-    const total = require('../utils/totalUploads')
     const fileName = `${generateString(5)}${path.extname(file.name)}`
     const deletionKey = generateString(32)
     const date = new Date()
@@ -42,7 +41,6 @@ router.post('/', (req, res) => {
 
         const buildData = {
             date: date.toLocaleString(),
-            count: total(),
             key: deletionKey
         }
 

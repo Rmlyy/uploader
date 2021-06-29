@@ -9,7 +9,6 @@ const placeholder = require('string-placeholder')
 router.get('/:file', (req, res) => {
     const { file } = req.params
     const extension = require('../utils/checkExtension')
-    const total = require('../utils/totalUploads')
     const color = require('../utils/color')
     const getSize = require('../utils/getSize')
 
@@ -24,16 +23,14 @@ router.get('/:file', (req, res) => {
                 name: file,
                 size: getSize(imagePath),
                 width: dimensions.width,
-                height: dimensions.height,
-                count: total()
+                height: dimensions.height
             })
 
             const cardTitle = placeholder(process.env.IMAGE_CARD_TITLE, {
                 name: file,
                 size: getSize(imagePath),
                 width: dimensions.width,
-                height: dimensions.height,
-                count: total()
+                height: dimensions.height
             })
 
             const cardDescription = placeholder(process.env.IMAGE_CARD_DESCRIPTION, {
@@ -68,15 +65,13 @@ router.get('/:file', (req, res) => {
             const header = placeholder(process.env.TEXT_HEADER, {
                 name: file,
                 size: getSize(filePath),
-                words: words,
-                count: total()
+                words: words
             })
 
             const cardTitle = placeholder(process.env.TEXT_CARD_TITLE, {
                 name: file,
                 size: getSize(filePath),
-                words: words,
-                count: total()
+                words: words
             })
 
             const cardDescription = placeholder(process.env.TEXT_CARD_DESCRIPTION, {
@@ -108,14 +103,12 @@ router.get('/:file', (req, res) => {
             const fileData = require(`../uploads/data/${file}.json`)
             const header = placeholder(process.env.UNCATEGORIZED_HEADER, {
                 name: file,
-                size: getSize(filePath),
-                count: total()
+                size: getSize(filePath)
             })
 
             const cardTitle = placeholder(process.env.UNCATEGORIZED_CARD_TITLE, {
                 name: file,
-                size: getSize(filePath),
-                count: total()
+                size: getSize(filePath)
             })
 
             const cardDescription = placeholder(process.env.UNCATEGORIZED_CARD_DESCRIPTION, {
@@ -133,7 +126,6 @@ router.get('/:file', (req, res) => {
                 name: file,
                 size: getSize(filePath),
                 color: `${color()}`,
-                count: total(),
                 uploadedAt: fileData.date,
                 url: `${process.env.URL}/${file}`,
                 rawurl: `${process.env.URL}/raw/${file}`,
