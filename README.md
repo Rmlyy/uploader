@@ -3,12 +3,13 @@
 2. [Features](#features)
 3. [Prerequisites](#prerequisites)
 4. [Installation](#installation)
-5. [Configure ShareX](#configure-sharex)
-6. [Configure Flameshot](#configure-flameshot)
-7. [Upgrading](#upgrading)
-8. [Demo](#demo)
-9. [Support](#support)
-10. [Donate](#donate)
+5. [Webserver Configuration](#webserver-configuration)
+6. [ShareX Configuration](#sharex-configuration)
+7. [Flameshot Configuration](#flameshot-configuration)
+8. [Upgrading](#upgrading)
+9. [Demo](#demo)
+10. [Support](#support)
+11. [Donate](#donate)
 ***
 
 ## Introduction
@@ -41,14 +42,13 @@ This is a simple to use, configurable & customizable uploader with Discord Embed
 3. Install the necessary packages
 `$ npm i`
 4. Rename the `env.example` file to `.env`, then open it up in a text editor.  
-4.1 Change URL  
-`URL=https://yourdomain.com` Change the URL to your domain or IP Address. **(( Don't put the last / ))**  
-4.2 Change the secret key  
-`SECRET=yoursecretkey` It is highly recommended to change the secret key so others can't upload to your server.  
-5. Run it
-`node app.js`  
+5. Change the URL to your domain or IP Address. **(( Don't put the last / ))**  
+6. Change the secret key so others can't upload to your server.   
+7. Run it
+`$ node app.js`  
 You can use something like `screen` or `pm2` to keep the server running.
-6. Configure your webserver
+
+## Webserver configuration
 * NGINX with SSL example configuration:
 ```
 server {
@@ -132,13 +132,13 @@ Make sure you have the `proxy_http` module enabled: `a2enmod proxy_http`
     ProxyPass "/"   "http://localhost:8720"
 </VirtualHost>
 ```
-## Configure ShareX   
+## ShareX Configuration  
 1. [Download the ShareX example config](https://dl.rmly.dev/config.sxcu)  
 2. Import the config  
 3. Change "Request URL" to your domain  
 4. Change secret key value to your secret key  
 
-## Configure Flameshot
+## Flameshot Configuration
 For Flameshot users on Linux, you can use [this shell script](https://gist.github.com/Rmlyy/3d712dd1d5ed75416746f7657b3819fb).
 
 ### Upgrading
