@@ -40,9 +40,9 @@ This is a simple to use, configurable & customizable uploader with Discord Embed
 `$ cd Uploader`
 3. Install the necessary packages
 `$ npm i`
-4. Rename the `env.example` file to `.env`, then open it up in a text editor.
+4. Rename the `env.example` file to `.env`, then open it up in a text editor.  
 4.1 Change URL  
-`URL=https://yourdomain.com` Change the URL to your domain or IP Address. **Don't put the last /**  
+`URL=https://yourdomain.com` Change the URL to your domain or IP Address. **(( Don't put the last / ))**  
 4.2 Change the secret key  
 `SECRET=yoursecretkey` It is highly recommended to change the secret key so others can't upload to your server.  
 5. Run it
