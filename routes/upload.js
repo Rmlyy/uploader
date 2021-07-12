@@ -1,7 +1,6 @@
-const express = require('express')
+const router = require('express').Router()
 const path = require('path')
 const fs = require('fs')
-const router = express.Router()
 
 router.post('/', (req, res) => {
     const { secret, onlyURL } = req.query
@@ -17,7 +16,7 @@ router.post('/', (req, res) => {
 
     const generateString = require('../utils/generateString')
     const fileName = `${generateString(5)}${path.extname(file.name)}`
-    const deletionKey = generateString(32)
+    const deletionKey = generateString(8)
     const date = new Date()
 
     let uploadPath

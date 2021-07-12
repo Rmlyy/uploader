@@ -1,9 +1,20 @@
-# Uploader v1.0
-
-Simple to use Uploader with Discord Embed, ShareX & Flameshot support.
+# Table of contents
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Prerequisites](#prerequisites)
+4. [Installation](#installation)
+5. [Configure ShareX](#configure-sharex)
+6. [Configure Flameshot](#configure-flameshot)
+7. [Upgrading](#upgrading)
+8. [Demo](#demo)
+9. [Support](#support)
+10. [Donate](#donate)
 ***
 
-## Features:
+## Introduction
+This is a simple to use, configurable & customizable uploader with Discord Embed, ShareX, Flameshot support, and many more [features](#features).
+
+## Features
 * Customizable
 * ShareX Support
 * Flameshot Support
@@ -20,8 +31,8 @@ Simple to use Uploader with Discord Embed, ShareX & Flameshot support.
 * Node.JS v14 recommended or v14+
 * (Optional) a web server
 
-## Installation:
-**NOTE:** The installation guide was written assuming the host OS is Debian 10.
+## Installation
+**NOTE:** The installation guide was written assuming the host OS is Ubuntu 20.04.
 
 1. Clone the repository
 `$ git clone https://github.com/Rmlyy/Uploader.git`
@@ -33,7 +44,7 @@ Simple to use Uploader with Discord Embed, ShareX & Flameshot support.
 4.1 Change URL  
 `URL=https://yourdomain.com` Change the URL to your domain or IP Address. **Don't put the last /**  
 4.2 Change the secret key  
-`SECRET=verysecretkey` It is highly recommended to change the secret key so others can't upload to your server.  
+`SECRET=yoursecretkey` It is highly recommended to change the secret key so others can't upload to your server.  
 5. Run it
 `node app.js`  
 You can use something like `screen` or `pm2` to keep the server running.
@@ -121,17 +132,23 @@ Make sure you have the `proxy_http` module enabled: `a2enmod proxy_http`
     ProxyPass "/"   "http://localhost:8720"
 </VirtualHost>
 ```
-7. Configure ShareX   
-7.1 [Download ShareX example config](https://rmly.dev/uploader/config.sxcu)  
-7.2 Import the config  
-7.3 Change "Request URL" to your domain  
-7.4 Change secret key value to your secret key  
+## Configure ShareX   
+1. [Download the ShareX example config](https://dl.rmly.dev/config.sxcu)  
+2. Import the config  
+3. Change "Request URL" to your domain  
+4. Change secret key value to your secret key  
 
 ## Configure Flameshot
 For Flameshot users on Linux, you can use [this shell script](https://gist.github.com/Rmlyy/3d712dd1d5ed75416746f7657b3819fb).
 
+### Upgrading
+To upgrade, simply replace all the old files and directories (except the uploads directory if you want to keep your uploads) with the new files, and then restart the server.
+
+### Demo
+A live version of this uploader is hosted at [https://i.rmly.dev](https://i.rmly.dev), however, there isn't any possibility to test the upload at the moment, it is best if you try it on your own.
+
 ## Support
-Need help? Feel free to join [my discord server](https://discord.rmly.dev) or [email me](mailto:rmly@rmly.dev).
+Need help? Feel free to join [my discord server](https://discord.rmly.dev) or [email me](mailto:hello@rmly.dev).
 
 ## Donate
 You can donate [here](https://rmly.dev/donate) to support this project. Thanks!
