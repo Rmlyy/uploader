@@ -1,13 +1,11 @@
 const router = require('express').Router()
 
 const template = require('string-placeholder')
-const totalUploads = require('../utils/totalUploads')
-const totalSize = require('../utils/totalSize')
 
 router.get('/', (req, res) => {
     const statistics = template(process.env.STATISTICS, {
-        total: totalUploads(),
-        size: totalSize()
+        total: process.env.TOTAL,
+        size: process.env.SIZE
     })
 
     res.render('index', {

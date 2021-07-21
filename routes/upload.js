@@ -21,6 +21,7 @@ router.post('/', (req, res) => {
 
     let uploadPath
     const extension = require('../utils/checkExtension')
+    const updateCache = require('../utils/updateCache')
 
     if (extension(file.name) === 'image') {
         uploadPath = `${path.dirname(require.main.filename)}/uploads/images/${fileName}`
@@ -54,6 +55,7 @@ router.post('/', (req, res) => {
             deletionUrl: `${process.env.URL}/delete/${fileName}?key=${deletionKey}`
         })
 
+        updateCache()
     })
 })
 

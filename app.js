@@ -25,3 +25,6 @@ app.use('/delete', deleteRouter)
 app.listen(process.env.PORT, () => {
     console.log(`Listening on ${process.env.PORT}`)
 })
+
+const updateCache = require('./utils/updateCache')
+updateCache()
