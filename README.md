@@ -35,16 +35,16 @@ This is a simple to use, configurable & customizable uploader with Discord Embed
 ## Installation
 **NOTE:** The installation guide was written assuming the host OS is Ubuntu 20.04.
 
-1. Clone the repository
+1. Clone the repository  
 `$ git clone https://github.com/Rmlyy/Uploader.git`
-2. CD into the uploader directory
+2. CD into the uploader directory  
 `$ cd Uploader`
-3. Install the necessary packages
+3. Install the necessary packages  
 `$ npm i`
 4. Rename the `env.example` file to `.env`, then open it up in a text editor.  
 5. Change the URL to your domain or IP Address. **(( Don't put the last / ))**  
 6. Change the secret key so others can't upload to your server.   
-7. Run it
+7. Run it  
 `$ node app.js`  
 You can use something like `screen` or `pm2` to keep the server running.
 
