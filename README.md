@@ -30,10 +30,10 @@ This is a simple to use, configurable & customizable uploader with Discord Embed
 ## Prerequisites
 * Basic knowledge of Linux
 * Node.JS v14 recommended or v14+
-* (Optional) a web server
+* (Optional) a web server (nginx recommended)
 
 ## Installation
-**NOTE:** The installation guide was written assuming the host OS is Ubuntu 20.04.
+**NOTE:** The installation guide was written assuming the host OS is Debian 10.
 
 1. Clone the repository  
 `$ git clone https://github.com/Rmlyy/Uploader.git`
@@ -115,7 +115,8 @@ Make sure you have the `proxy_http` module enabled: `a2enmod proxy_http`
     LimitRequestBody    536870912
 
     # Change this to your server port in .env
-    ProxyPass "/"   "http://localhost:8720"
+    ProxyPass / http://localhost:8720/
+    ProxyPassReverse / http://localhost:8720/
 </VirtualHost>
 ```
 * Apache without SSL example configuration:  
@@ -129,7 +130,8 @@ Make sure you have the `proxy_http` module enabled: `a2enmod proxy_http`
     LimitRequestBody    536870912
 
     # Change this to your server port in .env
-    ProxyPass "/"   "http://localhost:8720"
+    ProxyPass / http://localhost:8720/
+    ProxyPassReverse / http://localhost:8720/
 </VirtualHost>
 ```
 ## ShareX Configuration  
