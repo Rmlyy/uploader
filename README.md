@@ -153,4 +153,4 @@ A live version of this uploader is hosted at [https://i.rmly.dev](https://i.rmly
 Need help? Feel free to join [my discord server](https://discord.rmly.dev) or [email me](mailto:hello@rmly.dev).
 
 ## Donate
-You can donate [here](https://rmly.dev/donate) to support this project. Thanks!
+You can donate [here](https://paypal.me/Rmlyy) to support this project. Thanks!
