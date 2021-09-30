@@ -47,13 +47,14 @@ router.post('/', (req, res) => {
         const data = JSON.stringify(buildData)
         fs.writeFileSync(`./uploads/data/${fileName}.json`, data)
 
-        if (onlyURL == '1') {
-            return res.send(`${process.env.URL}/${fileName}`)
+        if (onlyURL) {
+            res.send(`${process.env.URL}/${fileName}`)
+        } else {
+            res.send({
+                url: `${process.env.URL}/${fileName}`,
+                deletionUrl: `${process.env.URL}/delete/${fileName}?key=${deletionKey}`
+            })
         }
-        res.send({
-            url: `${process.env.URL}/${fileName}`,
-            deletionUrl: `${process.env.URL}/delete/${fileName}?key=${deletionKey}`
-        })
 
         updateCache()
     })
