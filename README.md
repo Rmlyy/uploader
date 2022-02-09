@@ -29,11 +29,11 @@ This is a simple to use, configurable & customizable uploader with Discord Embed
 
 ## Prerequisites
 * Basic knowledge of Linux
-* Node.JS v14 recommended or v14+
+* Node.JS v16 recommended or v14+
 * (Optional) a web server (nginx recommended)
 
 ## Installation
-**NOTE:** The installation guide was written assuming the host OS is Debian 10.
+**NOTE:** The installation guide was written assuming the host OS is Debian 11.
 
 1. Clone the repository  
 `$ git clone https://github.com/Rmlyy/Uploader.git`
@@ -144,7 +144,7 @@ Make sure you have the `proxy_http` module enabled: `a2enmod proxy_http`
 For Flameshot users on Linux, you can use [this shell script](https://gist.github.com/Rmlyy/3d712dd1d5ed75416746f7657b3819fb).
 
 ### Upgrading
-To upgrade, simply replace all the old files and directories (except the uploads directory if you want to keep your uploads) with the new files, and then restart the server.
+To upgrade, simply replace all the old files and directories (except the uploads directory if you want to keep your uploads) with the new files, run `npm i`, and then restart the server.
 
 ### Demo
 A live version of this uploader is hosted at [https://i.rmly.dev](https://i.rmly.dev), however, there isn't any possibility to test the upload at the moment, it is best if you try it on your own.

@@ -11,14 +11,19 @@
     <meta property="og:url" content="https://github.com/Rmlyy/Uploader">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/img/icon.png">
+    <script src="https://kit.fontawesome.com/e931be9ca1.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="centered">
         <h1><%- name %></h1>
         <p><%- statistics %></p>
+        <% if (loggedIn) { %>
+        <div>
+            <a href="/dashboard"><button class="btn" style="background-color: #12a668; border-color: #12a668;"><i class="fa fa-columns"></i>
+                    Dashboard</button></a>
+        </div>
+        <% } else { %>
+            <a href="/login"><button class="btn" style="background-color: #099930; border-color: #099930;"><i class="fas fa-sign-in-alt"></i> Login</button></a>
+        <% } %> 
     </div>
-    <div class="footer">
-        <p>Powered by <a href="https://github.com/Rmlyy/Uploader" target="_blank">Uploader v1.0</a></p>
-    </div>
-</body>
-</html>
+<%- include('partials/footer') %> 

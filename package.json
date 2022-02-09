@@ -10,6 +10,8 @@
   "author": "Rmly",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",

@@ -1,6 +1,6 @@
 const router = require('express').Router()
-
 const template = require('string-placeholder')
+const isLoggedIn = require('../utils/isLoggedIn')
 
 router.get('/', (req, res) => {
     const statistics = template(process.env.STATISTICS, {
@@ -9,8 +9,9 @@ router.get('/', (req, res) => {
     })
 
     res.render('index', {
-        name: process.env.NAME,
-        statistics: statistics
+        name: process.env.APP_NAME,
+        statistics: statistics,
+        loggedIn: isLoggedIn(req)
     })
 })
 

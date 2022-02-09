@@ -1,7 +1,5 @@
-module.exports = function() {
-    const totalUploads = require('./totalUploads')
-    const totalSize = require('./totalSize')
-
-    process.env.TOTAL = totalUploads()
-    process.env.SIZE = totalSize()
+module.exports = function () {
+    process.env.TOTAL = require('./totalUploads')()
+    process.env.SIZE = require('./totalSize')()
+    console.log(`Cache updated. ${process.env.TOTAL}:${process.env.SIZE}`)
 }

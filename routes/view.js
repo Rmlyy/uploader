@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const imgSize = require('image-size')
 const placeholder = require('string-placeholder')
+const isLoggedIn = require('../utils/isLoggedIn')
 
 router.get('/:file', (req, res) => {
     const { file } = req.params
@@ -43,12 +44,13 @@ router.get('/:file', (req, res) => {
                 header: header,
                 cardTitle: cardTitle,
                 cardDescription: cardDescription,
-                appName: process.env.NAME,
+                appName: process.env.APP_NAME,
                 name: file,
                 color: `${color()}`,
                 uploadedAt: imageData.date,
-                rawurl: `${process.env.URL}/raw/${file}`,
-                dlurl: `${process.env.URL}/dl/${file}`
+                url: process.env.URL,
+                loggedIn: isLoggedIn(req),
+                delKey: imageData.key
             })
         } else res.status(404).render('404')
 
@@ -84,15 +86,15 @@ router.get('/:file', (req, res) => {
                 header: header,
                 cardTitle: cardTitle,
                 cardDescription: cardDescription,
-                appName: process.env.NAME,
+                appName: process.env.APP_NAME,
                 name: file,
                 size: getSize(filePath),
                 color: `${color()}`,
                 uploadedAt: fileData.date,
                 content: filter(fileContent),
-                url: `${process.env.URL}/${file}`,
-                rawurl: `${process.env.URL}/raw/${file}`,
-                dlurl: `${process.env.URL}/dl/${file}`
+                url: process.env.URL,
+                delKey: fileData.key,
+                loggedIn: isLoggedIn(req)
             })
         } else res.status(404).render('404')
     } else {
@@ -121,14 +123,14 @@ router.get('/:file', (req, res) => {
                 header: header,
                 cardTitle: cardTitle,
                 cardDescription: cardDescription,
-                appName: process.env.NAME,
+                appName: process.env.APP_NAME,
                 name: file,
                 size: getSize(filePath),
                 color: `${color()}`,
                 uploadedAt: fileData.date,
-                url: `${process.env.URL}/${file}`,
-                rawurl: `${process.env.URL}/raw/${file}`,
-                dlurl: `${process.env.URL}/dl/${file}`
+                url: process.env.URL,
+                delKey: fileData.key,
+                loggedIn: isLoggedIn(req)
             })
         } else res.status(404).render('404')
     }

@@ -14,7 +14,7 @@ router.get('/:file', (req, res) => {
         if (fileData.key === key) {
             fs.unlinkSync(getPath(file))
             fs.unlinkSync(`${path.dirname(require.main.filename)}/uploads/data/${file}.json`)
-            res.send('File sucessfully deleted.')
+            res.send('<script>alert("File successfully deleted."); window.location = "/"</script>')
             updateCache()
         } else res.status(401).send('Invalid deletion key.')
     } else res.status(404).render('404')

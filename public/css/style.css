@@ -20,12 +20,12 @@ img {
 }
 
 a {
-    color: #edeeef;
+    color: inherit;
     text-decoration: none;
 }
 
 a:hover {
-    color: rgb(192,192,192);
+    text-decoration: underline;
 }
 
 h1, h2 {
@@ -38,14 +38,16 @@ h1, h2 {
     font-size: 15px;
     background-color: inherit;
     color: inherit;
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
+    border-radius: 10px;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;   
 }
 
 .btn:hover {
-    border: 1px solid #e8eae6;
+    border: 3px solid #e8eae6;
+    color: rgb(192,192,192);
 }
 
 .footer {
@@ -62,4 +64,20 @@ h1, h2 {
 
 .footer a:hover {
     color: #edeeef;
+}
+
+input[type=text], input[type=password] {
+  padding:10px;
+  border-radius:10px;
+  font-family:inherit;
+  font-size: 15px;
+  text-align: center;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
 }

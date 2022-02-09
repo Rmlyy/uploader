@@ -2,14 +2,14 @@
 
 <% if (image) { %>
     <h1><%- header %></h1><br>
-    <img src="<%- rawurl %>" alt="Uploaded image">
+    <img src="<%- url %>/raw/<%- name %>" alt="Uploaded image">
 <% } else if (text) { %>
     <h1><%- header %></h1><br>
     <code><%- content %></code>
 <% } else if (video) { %>
     <h1><%- header %></h1>
     <video width="320" height="240" controls>
-        <source src="<%- rawurl %>" type="video/mp4">
+        <source src="<%- url %>/raw/<%- name %>" type="video/mp4">
       </video>
 <% } else { %>
     <h1>Uncategorized file</h1>
@@ -18,7 +18,30 @@
 <% } %>
 
 <p>Uploaded at <b><%- uploadedAt %> </b></p>
-<a href="<%- rawurl %> " target="_blank"><button class="btn"><i class="far fa-image"></i> View raw</button></a>
-<a href="<%- dlurl %> " target="_blank"><button class="btn"><i class="fas fa-cloud-download-alt"></i> Download</button></a>
+<a href="<%- url %>/raw/<%- name %>" target="_blank"><button class="btn"><i class="far fa-image"></i> View raw</button></a>
+<a href="<%- url %>/dl/<%- name %>" target="_blank"><button class="btn"><i class="fas fa-cloud-download-alt"></i> Download</button></a>
+<% if (loggedIn) { %>
+    <p>Admin:</p>
+    <div>
+            <button class="btn" onclick="confirmDelete()" style="background-color: #ad0c00; border-color: #ad0c00;"><i class="fas fa-trash"></i> Delete</button>
+            <button class="btn" onclick="rename()" style="background-color: #e08300; border-color: #e08300;"><i class="fas fa-arrow-circle-right"></i> Rename</button>
+    </div>
+    <script>
+        function confirmDelete() {
+            if (confirm("Are you sure you want to delete this file?")) {
+                window.location = '<%- url %>/delete/<%- name %>?key=<%- delKey %>'
+            }
+        }
+
+        function rename() {
+            const newName = prompt("Enter the new name for this file:", "<%- name %>");
+            if (newName == null || newName == "") {
+                console.log('Prompt canceled')
+            } else {
+                window.location = `<%- url %>/rename/<%- name %>?name=${newName}&key=<%- delKey %>`
+            }
+        }
+    </script>
+<% } %>
 
 <%- include('partials/footer') %> 
