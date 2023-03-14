@@ -147,7 +147,7 @@ For Flameshot users on Linux, you can use [this shell script](https://gist.githu
 To upgrade, simply replace all the old files and directories (except the uploads directory if you want to keep your uploads) with the new files, run `npm i`, and then restart the server.
 
 ### Demo
-A live version of this uploader is hosted at [https://i.rmly.dev](https://i.rmly.dev), however, there isn't any possibility to test the upload at the moment, it is best if you try it on your own.
+Not available anymore.
 
 ## Support
 Need help? Feel free to join [my discord server](https://discord.rmly.dev) or [email me](mailto:hello@rmly.dev).
