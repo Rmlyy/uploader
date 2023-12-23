@@ -1,3 +1,6 @@
+> [!CAUTION]
+> The authentication system for this app is **VERY BAD** and it's extremely easy to bypass. Using this app is **NOT RECOMMENDED** unless you disable any routes which use authentication or wait for a fix which isn't likely to happen in the near future.
+
 # Table of contents
 1. [Introduction](#introduction)
 2. [Features](#features)
